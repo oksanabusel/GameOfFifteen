@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Game Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="GameController" customModule="GameOfFifteen" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="dD6-kT-RSC">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hfb-gP-1wR" userLabel="ContainerView">
+                                <rect key="frame" x="37.5" y="183.5" width="300" height="300"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="0Kp-wC-SDY"/>
+                                    <constraint firstAttribute="width" constant="300" id="ytA-9O-BQD"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="dD6-kT-RSC" secondAttribute="bottom" id="3Se-6I-Kmg"/>
+                            <constraint firstItem="Hfb-gP-1wR" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="45k-UA-D8Z"/>
+                            <constraint firstItem="dD6-kT-RSC" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Clz-xc-eyq"/>
+                            <constraint firstItem="dD6-kT-RSC" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="OGj-9E-xIM"/>
+                            <constraint firstItem="Hfb-gP-1wR" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Xqy-ci-wmB"/>
+                            <constraint firstItem="dD6-kT-RSC" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="e6v-O5-kU4"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="containerView" destination="Hfb-gP-1wR" id="T6X-jI-6tx"/>
+                        <segue destination="5H2-Z9-YNG" kind="show" identifier="winControllerSegue" id="4Kk-65-PHz"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="53.600000000000001" y="26.53673163418291"/>
+        </scene>
+        <!--Win Controller-->
+        <scene sceneID="zT3-yg-2Ve">
+            <objects>
+                <viewController id="5H2-Z9-YNG" customClass="WinController" customModule="GameOfFifteen" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Kkd-NM-71W">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="youWinImage" translatesAutoresizingMaskIntoConstraints="NO" id="NOu-uB-FXo">
+                                <rect key="frame" x="0.0" y="268.5" width="375" height="130"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="130" id="BIs-HC-4w0"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vuO-SK-rgN">
+                                <rect key="frame" x="164.5" y="468.5" width="46" height="38"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <state key="normal" title="Back"/>
+                                <connections>
+                                    <action selector="pressBackButton:" destination="5H2-Z9-YNG" eventType="touchUpInside" id="ABk-gL-yqV"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="vuO-SK-rgN" firstAttribute="centerX" secondItem="NOu-uB-FXo" secondAttribute="centerX" id="7BR-UZ-Tx0"/>
+                            <constraint firstItem="vuO-SK-rgN" firstAttribute="top" secondItem="NOu-uB-FXo" secondAttribute="bottom" constant="70" id="PG4-Oy-WwO"/>
+                            <constraint firstItem="NOu-uB-FXo" firstAttribute="centerY" secondItem="Kkd-NM-71W" secondAttribute="centerY" id="ZZI-6Q-lv0"/>
+                            <constraint firstItem="NOu-uB-FXo" firstAttribute="centerX" secondItem="Kkd-NM-71W" secondAttribute="centerX" id="hMD-6W-b69"/>
+                            <constraint firstAttribute="trailing" secondItem="NOu-uB-FXo" secondAttribute="trailing" id="jke-ps-qv8"/>
+                            <constraint firstItem="NOu-uB-FXo" firstAttribute="leading" secondItem="Kkd-NM-71W" secondAttribute="leading" id="qag-DS-Wo1"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="zKd-1F-9mH"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LfO-9k-Kwf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="863" y="27"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Background" width="2448" height="3264"/>
+        <image name="youWinImage" width="1000" height="491"/>
+    </resources>
+</document>
